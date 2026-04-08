@@ -25,3 +25,13 @@ AML analysis using the IBM AMLSim EXample Dataset from Kaggle
 ### Insight: This chain analysis reveales that certain accounts act as hubs, with one account (A) consistently sending the same amount to a central intermediary account (B), which then redistributes the same amount to multiple recipient accounts (C). While this creates reocurring A --> B --> C chains, the uniformity and repetition reflect the synthetic nature of the dataset rather than actual suspicious behavior. 
 ### Business Impact: Understanding these patterns is important because it highlights the significance between normal or systematic transaction patterns and truly unusual activity. Even thogh no anomalies were found in this simulation, it demonstrates how money flow chains can be traced to identify intermediaries and distribution points.
 
+# Question 6: Which accounts have an extreme amount of outgoing funds?
+## Query: see question6
+### Insight: Multiple detection approaches, including transaction thresholds, average amount comparisons, and transaction chain analysis, consistently returned a large number of accounts. The transaction behavior seems to be uniform with many accoutns following very similar patterns. Consequently, simple rule-based methods are not effective in isolation truly unusual activity within this dataset. 
+### Business Impact: this is a key challenge in AML systems: poorly calibrated or too simple detection rules can generate a high number of false positives. In real-world scenarios, this would significantly reduce efficiency, More advanced techniques, such as behavioral profiling, network analysis, or machine learning models, are often required to effectively differentiate suspicous activity from normal patterns. 
+
+# Question 7: Which accounts send more more than the average account?
+## Query: see question7
+### Insight: this analysis identified 1876 accounts with total outgoing transaction values above the average across all accounts. This indicates that a large proportion of accounts have a higher-than average transaction activity and suggests that the transaction volumes are distributed relatively evenly within the dataset, rather than being concetrated among a small number of accounts. 
+### Business Impact Since a significant number of accounts exceeded the average, using a simple average bases threshold will not help identify anomalies. In real world scenarios, relying solely on average comparisons would lead to high volume of alerts, reducing investigation efficiency. 
+
